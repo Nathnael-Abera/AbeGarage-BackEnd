@@ -1,8 +1,11 @@
 import express from "express"
 import helmet from "helmet"
 import cors from "cors"
+import connectDB from "../config/database"
+import dotenv from 'dotenv/config';
 import router from "./routes"
-    const app =express()
+    connectDB();
+    const app =express();
     app.use(cors())
     app.use(helmet())
     app.use(express.json())
